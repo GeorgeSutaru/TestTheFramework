@@ -1,12 +1,22 @@
-# from the java openjdk8 image
-FROM openjdk:8
-#install git in docker image and clone the repository
-run apt-get update && apt-get install -y git
-run git clone https://github.com/saucelabs/sample-app-web.git && cd sample-app-web
+# from the java 8 temurin
+FROM adoptopenjdk/openjdk8:alpine-slim
+#install git on alipne linux
+RUN apk add --update git
+RUN git clone https://github.com/saucelabs/sample-app-web.git && cd sample-app-web
 #npm install
-run apt-get update && apt-get install -y npm
-run npm install
+WORKDIR /sample-app-web
+RUN apk add --update nodejs npm
+RUN npm install
 #expose port 3000
-expose 3000
+EXPOSE 3000
 #run the project
-run npm run start
+ENTRYPOINT [ "npm","run","start" ]
+
+#docker build image from Dockerfile_Saucedemo 
+# docker build -t georgesutaru/test_the_framework:saucedemo -f Dockerfile_Saucedemo .
+
+# run using below command
+# docker run --env=PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=LANG=en_US.UTF-8 --env=LANGUAGE=en_US:en --env=LC_ALL=en_US.UTF-8 --env=JAVA_VERSION=jdk8u372-b07 --env=JAVA_HOME=/opt/java/openjdk --workdir=/sample-app-web -p 3000:3000 --runtime=runc -d georgesutaru/test_the_framework:saucedemo
+
+# update image using
+# docker push georgesutaru/test_the_framework:saucedemo

@@ -1,0 +1,14 @@
+services:
+  realwordapp:
+    image: georgesutaru/test_the_framework:realwordapp
+    ports:
+      - 3001:3000
+      - 3002:3001
+  saucedemo:
+    image: georgesutaru/test_the_framework:saucedemo
+    ports:
+      - 3000:3000
+  theinternet:
+    image: gprestes/the-internet:latest
+    ports:
+      - 3003:5000

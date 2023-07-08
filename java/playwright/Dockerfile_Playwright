@@ -5,7 +5,3 @@ run apt-get update && apt-get install -y git
 run git clone https://github.com/GeorgeSutaru/TestTheFramework.git && cd TestTheFramework
 #run the tests
 # mvn test
-
-
-#download Playwright java docker image and mount the current directory to the image
-# docker run -it --rm playwrightjava:latest
