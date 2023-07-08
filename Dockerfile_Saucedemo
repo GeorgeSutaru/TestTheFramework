@@ -1,0 +1,12 @@
+# from the java openjdk8 image
+FROM openjdk:8
+#install git in docker image and clone the repository
+run apt-get update && apt-get install -y git
+run git clone https://github.com/saucelabs/sample-app-web.git && cd sample-app-web
+#npm install
+run apt-get update && apt-get install -y npm
+run npm install
+#expose port 3000
+expose 3000
+#run the project
+run npm run start
