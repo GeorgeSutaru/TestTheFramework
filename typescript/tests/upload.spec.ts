@@ -6,7 +6,7 @@ test.describe('Upload', () => {
     await page.goto('apps/upload/');
     await expect(page.locator('text=No File Selected')).toBeVisible();
 
-    const file = path.join(process.cwd(), 'fixtures', 'demo.png');
+    const file = path.join(process.cwd(), 'typescript' ,'fixtures', 'demo.png');
 
     // Select one file to upload
     await page.setInputFiles('#file-input', file);
@@ -20,7 +20,7 @@ test.describe('Upload', () => {
     await page.goto('apps/upload/');
     await expect(page.locator('text=No File Selected')).toBeVisible();
 
-    const imgDir = path.join(process.cwd(), 'fixtures');
+    const imgDir = path.join(process.cwd(), 'typescript', 'fixtures');
     const images = ['demo.png', 'demo2.png', 'demo3.jpg'];
 
     // Select multiple files to upload
