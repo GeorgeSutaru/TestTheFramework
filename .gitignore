@@ -25,3 +25,43 @@ replay_pid*
 
 # vscode files
 .vscode/
+
+#target folder
+target/
+
+#playwright allure files
+java/playwright/allure-results/
+java/playwright/allure-report/
+
+# TestNG output
+java/playwright/output-testng/
+
+# Node.js / npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Playwright (TypeScript)
+playwright-report/
+playwright/.cache/
+
+# IDE files
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Build output
+dist/
+out/
+build/

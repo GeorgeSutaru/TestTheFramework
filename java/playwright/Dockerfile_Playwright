@@ -1,7 +1,0 @@
-#from the playwright java docker image
-FROM mcr.microsoft.com/playwright/java:v1.34.0-jammy
-#install git in docker image and clone the repository
-run apt-get update && apt-get install -y git
-run git clone https://github.com/GeorgeSutaru/TestTheFramework.git && cd TestTheFramework
-#run the tests
-# mvn test

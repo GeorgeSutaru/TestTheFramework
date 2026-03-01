@@ -1,0 +1,20 @@
+{
+	"name": "qa-playground-tests-ts",
+	"version": "1.0.0",
+	"description": "TypeScript Playwright end-to-end tests for the QAPlayground.dev mini web apps",
+	"main": "dist/index.js",
+	"scripts": {
+		"test": "npx playwright test",
+		"build": "tsc",
+		"clean": "rm -rf dist node_modules",
+		"headed": "npx playwright test --headed"
+	},
+	"keywords": [],
+	"author": "Marko Simic",
+	"license": "ISC",
+	"devDependencies": {
+		"@playwright/test": "^1.58.2",
+		"@types/node": "^20.0.0",
+		"typescript": "^5.0.0"
+	}
+}
